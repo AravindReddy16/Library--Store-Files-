@@ -1,0 +1,23 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/uploadeditpage.css' %}">
+    <div style="padding-left:20px">
+        <div class="container">  
+            <form id="contact" action="" method="POST">
+                {% csrf_token %}
+                <h3>Update Pdf</h3>
+                <fieldset>
+                    {{form.title}}
+                </fieldset>
+                <fieldset>
+                    {{form.description}}
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit">Update</button>
+                </fieldset>
+                <p class="info">Back to Home <a href="{% url 'fileprofile' pdf.id %}">Cancel</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

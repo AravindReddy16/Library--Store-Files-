@@ -1,0 +1,20 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/deuploadpage.css' %}">
+    <div style="padding-left:20px">
+        <div class="container">  
+            <form id="contact" action="" method="POST">
+                {% csrf_token %}
+                <h3>Delete Pdf</h3>
+                <fieldset>
+                    <h4>You want to Delete '{{ pdf.title|capfirst }}' ?</h4>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit">Delete</button>
+                </fieldset>
+                <p class="info">Back to Home <a href="{% url 'fileprofile' pdf.id %}">Cancel</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

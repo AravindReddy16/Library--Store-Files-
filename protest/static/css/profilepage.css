@@ -1,0 +1,91 @@
+.parent {
+background-color: white;
+height: 400px;
+width: 80%;
+display: flex;
+margin-left: 120px;
+margin-top: -30px;
+margin-bottom: 80px;
+}
+.box-one {
+width: 35%;
+color: white;
+background-color: white;
+padding: 50px;
+}
+.box-two {
+width: 80%;
+background: linear-gradient(-57deg, #ff9900 63%, white 42%);
+color: white;
+}
+.profile-pic img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 3px solid #ff9900;
+}
+.image .profile-pic {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-top: 8%;
+    margin-left: 27%;
+}
+.color-secondary, a {
+color: #ff9900;
+text-decoration: none;
+}
+.contact-link {
+padding: 10px 30px;
+background: #ff9900;
+border-radius: 5px;
+font-family: monospace;
+font-weight: 700;
+font-size: 18px;
+color: #000000;
+}
+p {
+    color: #000000;
+}
+h3 {
+    color: #ff6600;
+}
+.profile-widget {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-bottom: 70px;
+    margin-left: 90px;
+    padding-left: 50px;
+    background-color: #ccc;
+}
+.profile-widget:hover {
+    transform: scale(1.1,1.1);
+}
+.profile-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+.profile-header h1 a {
+    text-decoration: none;
+    color: #ff6600;
+}
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+.social-info {
+    margin-top: 20px;
+}
+.likes,
+.comments,
+.views {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #ff6600;
+}

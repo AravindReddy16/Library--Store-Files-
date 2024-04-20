@@ -1,0 +1,32 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/profileeditpage.css' %}">
+    <div style="padding-left:20px">
+        <div class="container">  
+            <form id="contact" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3>Edit Profile</h3>
+                <fieldset>
+                    {{profileform.username}}
+                </fieldset>
+                <fieldset>
+                    {{profileform.first_name}}
+                </fieldset>
+                <fieldset>
+                    {{profileform.last_name}}
+                </fieldset>
+                <fieldset>
+                    {{profileform.email}}
+                </fieldset>
+                <fieldset>
+                    {{photoform.photo}}
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit">Update</button>
+                </fieldset>
+                <p class="info">Back to Home <a href="{% url 'profile' request.user.id %}">Cancel</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

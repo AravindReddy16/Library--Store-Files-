@@ -1,0 +1,46 @@
+h2 {
+    font-style: italic;
+    color: white;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+.profile-widget {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-bottom: 70px;
+    margin-left: 90px;
+    padding-left: 50px;
+    background-color: #ccc;
+}
+.profile-widget:hover {
+    transform: scale(1.1,1.1);
+}
+.profile-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+.profile-header h1 a {
+    text-decoration: none;
+    color: #ff6600;
+}
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+.social-info {
+    margin-top: 20px;
+}
+.likes,
+.comments,
+.views {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #ff6600;
+}

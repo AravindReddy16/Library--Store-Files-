@@ -1,0 +1,28 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/fileprofilepage.css' %}">
+    <div class="parent">
+        <div class="back"><a href="{% url 'fileview' pdfview.id %}">⬅️ Back</a></div>
+        <div class="box-one">
+            <h3>Title: {{pdfview.title|capfirst}} :)</h3>
+            <p>Pdf User: {{pdfview.user.username}}</p>
+            <p>User Email: {{pdfview.user.email}}</p>
+            <p>Uploaded: {{pdfview.uploaded}}</p>
+            <p>Views: {{views}}</p>
+            <p>Likes: {{likes}}</p>
+            <p>Comments: {{comments}}</p>
+            <div style="margin-top:50px;">
+                {% if pdfview.user == user %}
+                    <a class="contact-link" href="{% url 'uploadedit' pdfview.id %}">Edit</a>
+                    <a class="contact-link" href="{% url 'delupload' pdfview.id %}">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="box-two">
+            <div class="image" >
+                <img class="profile-pic" src="{{photo.photo.url}}" alt="profile-photo">
+            </div>
+        </div>
+    </div>
+{% endblock %}

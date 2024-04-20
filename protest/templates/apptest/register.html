@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registerfile.css' %}">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">First Name</span>
+                <input type="text" name="firstname" placeholder="Enter your firstname" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Last Name</span>
+                <input type="text" name="lastname" placeholder="Enter your lastname" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Username</span>
+                <input type="text" name="username" placeholder="Enter your username" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" name="password1" placeholder="Enter your password" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirm Password</span>
+                <input type="password" name="password2" placeholder="Confirm your password" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Profile Pic</span>
+                <input type="file" name="photo" placeholder="Profile Photo...">
+              </div>
+            </div>
+            <div class="error-messages">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+            <p class="message">Already registered? <a href="{% url 'login' %}">Login</a></p>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

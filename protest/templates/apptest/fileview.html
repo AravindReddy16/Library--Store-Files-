@@ -1,0 +1,57 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/fileviewpage.css' %}">
+    <div class="container">
+        <div class="box-1">
+            <div class="back"><a href="{% url 'home' %}">⬅️ Back</a></div>
+            <div class="details">
+                <div class="left-side">
+                    <p>Title: {{pdf.title|capfirst}}</p>
+                    <p>User: <a href="{% url 'profile' pdf.user.id %}">@{{pdf.user}}</a></p>
+                    <div class="review">
+                        {% if likeshow %}
+                            <a href="{% url 'filelike' pdf.id %}">Unlike</a>
+                        {% else %}
+                            <a href="{% url 'filelike' pdf.id %}">Like</a>
+                        {% endif %}
+                    </div>
+                    <div class="review">
+                        {% if saveshow %}
+                            <a href="{% url 'filesave' pdf.id %}">Unsave</a>
+                        {% else %}
+                            <a href="{% url 'filesave' pdf.id %}">Save</a>
+                        {% endif %}
+                    </div>
+                    <div class="review"><a href="{% url 'fileprofile' pdf.id %}">Overview</a></div>
+                </div>
+                <div class="right-side">
+                    <div class="view"><a href="{{pdf.pdffile.url}}">View</a></div>
+                    <div class="view"><a href="{{pdf.pdffile.url}}" download>Download</a></div>
+                </div>
+            </div>
+            <div class="describe">
+                <p>{{pdf.description|capfirst}}</p>
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="input-box">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="comment" placeholder="Comment">
+                    <input type="submit" value="Comment">
+                </form>
+            </div>
+            <div class="whole-comment">
+                {% if comments %}
+                    {% for comment in comments %}
+                        <div class="comment-box">
+                            <p>@{{comment.user}} -- ( {{comment.posted}} )</p>
+                            <p>:) {{comment.comment}}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

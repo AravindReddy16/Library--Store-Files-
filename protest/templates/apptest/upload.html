@@ -1,0 +1,26 @@
+{% extends 'apptest/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/uploadpage.css' %}">
+    <div style="padding-left:20px">
+        <div class="container">  
+            <form id="contact" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3>Upload Pdf</h3>
+                <fieldset>
+                    <input type="text" placeholder="Title" name="title" required>
+                </fieldset>
+                <fieldset>
+                    <textarea name="description" placeholder="Describe" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <input type="file" placeholder="Pdf File" name="pdffile" required>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit">Upload</button>
+                </fieldset>
+                <p class="info">Back to Home <a href="{% url 'home' %}">Cancel</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
